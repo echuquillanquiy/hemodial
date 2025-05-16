@@ -19,6 +19,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
+        'dni',
         'email',
         'password',
     ];
@@ -61,5 +63,10 @@ class User extends Authenticatable
     public function hemodialisisFinalizadasEnfermero(): HasMany
     {
         return $this->hasMany(Nurse::class, 'enfermero_finaliza_id');
+    }
+
+    public function getAuthIdentifierName()
+    {
+        return 'username';
     }
 }

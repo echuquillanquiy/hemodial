@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('n_historia')->unique();
             $table->string('autogenerado')->unique();
             $table->string('n_sesion')->nullable();
-            $table->enum('acceso_venoso',['CVC-LP', 'CVCT', 'FAV', 'VP', 'INJERTO'])->default('');
-            $table->enum('acceso_arterial',['CVC-LP', 'CVCT', 'FAV', 'VP', 'INJERTO'])->default('');
+            $table->enum('acceso_venoso',['CVC-LP', 'CVCT', 'FAV', 'VP', 'INJERTO'])->default('CVCT');
+            $table->enum('acceso_arterial',['CVC-LP', 'CVCT', 'FAV', 'VP', 'INJERTO'])->default('CVCT');
             $table->enum('estado',['ACTIVO', 'INACTIVO'])->default('ACTIVO');
-            $table->enum('serologia', ['SEROLOGICO', 'NO SEROLOGICO'])->default();
+            $table->enum('serologia', ['SEROLOGICO', 'NO SEROLOGICO'])->default('NO SEROLOGICO');
             $table->string('peso_seco')->nullable();
 
             $table->foreignId('shift_id')->constrained('shifts')->onDelete('cascade');
