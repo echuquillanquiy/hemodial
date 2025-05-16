@@ -42,4 +42,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function hemodialisisIniciadasMedico(): HasMany
+    {
+        return $this->hasMany(Medicine::class, 'medico_inicia_id');
+    }
+
+    public function hemodialisisFinalizadasMedico(): HasMany
+    {
+        return $this->hasMany(Medicine::class, 'medico_finaliza_id');
+    }
+
+    public function hemodialisisIniciadasEnfermero(): HasMany
+    {
+        return $this->hasMany(Nurse::class, 'enfermero_inicia_id');
+    }
+
+    public function hemodialisisFinalizadasEnfermero(): HasMany
+    {
+        return $this->hasMany(Nurse::class, 'enfermero_finaliza_id');
+    }
 }
