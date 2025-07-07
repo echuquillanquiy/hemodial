@@ -13,6 +13,21 @@ return new class extends Migration
     {
         Schema::create('treatments', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('voucher_id')->nullable()->constrained('vouchers');
+
+            $table->string('hr')->nullable();
+            $table->string('pa')->nullable();
+            $table->string('fc')->nullable();
+            $table->string('qb')->nullable();
+            $table->string('cnd')->nullable();
+            $table->string('ra')->nullable();
+            $table->string('rv')->nullable();
+            $table->string('ptm')->nullable();
+            $table->string('observacion')->nullable();
+
+            $table->enum('estado', ['PENDIENTE', 'FINALIZADO'])->default('PENDIENTE');
+
             $table->timestamps();
         });
     }

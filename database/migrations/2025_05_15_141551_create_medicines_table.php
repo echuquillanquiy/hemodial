@@ -14,15 +14,18 @@ return new class extends Migration
         Schema::create('medicines', function (Blueprint $table) {
             $table->id();
 
-            $table->string('hora_inicio')->nullable();
+            $table->foreignId('voucher_id')->nullable()->constrained('vouchers');
+        
+
+            $table->string('hora_inicio')->nullable(); //Mostrar al generar registro
             $table->text('problemas_clinicos')->nullable();
             $table->text('signos_sintomas')->nullable();
             $table->text('observaciones')->nullable();
-            $table->string('pa_inicial')->nullable(); // Presion arterial inicial
+            $table->string('pa_inicial')->nullable(); // Presion arterial inicial se mostrara en enfermeria y el tto
             $table->string('fc')->nullable(); // Frecuencia cardiaca
             $table->string('horas_hd')->nullable();
             $table->string('heparina')->nullable();
-            $table->string('peso_inicial')->nullable();
+            $table->string('peso_inicial')->nullable(); //Mostrar al generar registro
             $table->string('peso seco')->nullable();
             $table->string('uf')->nullable(); //ultrafiltracion
             $table->string('qb')->nullable(); // flujo de sangre
@@ -36,7 +39,8 @@ return new class extends Migration
             $table->string('area_filtro')->nullable();
             $table->string('membrana')->default('Polietersulfona');
             $table->text('eval_final')->nullable(); // Evaluacion final
-            $table->string('hora_final')->nullable();
+            $table->string('hora_final')->nullable(); //Mostrar al generar registro
+            $table->enum('estado', ['PENDIENTE', 'FINALIZADO'])->default('PENDIENTE'); // Presion arterial final
 
             $table->foreignId('medico_inicia_id')->nullable()->constrained('users');
             $table->foreignId('medico_finaliza_id')->nullable()->constrained('users');

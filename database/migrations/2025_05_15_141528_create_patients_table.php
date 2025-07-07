@@ -24,6 +24,7 @@ return new class extends Migration
             $table->enum('estado',['ACTIVO', 'INACTIVO'])->default('ACTIVO');
             $table->enum('serologia', ['SEROLOGICO', 'NO SEROLOGICO'])->default('NO SEROLOGICO');
             $table->string('peso_seco')->nullable();
+            $table->enum('frecuencia', ['L-M-V', 'M-J-S'])->default('L-M-V')->nullable();
 
             $table->foreignId('shift_id')->constrained('shifts')->onDelete('cascade');
 

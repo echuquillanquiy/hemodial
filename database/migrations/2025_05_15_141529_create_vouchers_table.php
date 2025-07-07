@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
 
             $table->string('anio');
-            $table->string('comprobante')->unique();
+            $table->string('n_comprobante')->unique();
+            $table->date('date_order')->nullable(); // Mejor usar date si almacenas fechas
+            $table->enum('covid', ['SI', 'NO'])->default('NO');
+            $table->foreignId('patient_id')->nullable()->constrained('patients')->nullOnDelete();
+
 
             $table->timestamps();
         });
