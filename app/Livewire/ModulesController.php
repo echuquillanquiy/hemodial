@@ -12,7 +12,7 @@ class ModulesController extends Component
     use WithPagination;
 
     public $name, $description, $selected_id, $componentName, $pageTitle, $search;
-    private $pagination = 10;
+    private $pagination = 5;
 
     public function mount()
     {

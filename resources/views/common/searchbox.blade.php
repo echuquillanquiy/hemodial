@@ -8,6 +8,7 @@
             </div>
             
             <input type="text" wire:model="search" class="form-control" placeholder="Buscar...">
+                <small>Valor actual: {{ $search }}</small>
         </div>
     </div>
 </div>
