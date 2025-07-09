@@ -1,4 +1,5 @@
-<div class="row sales layout-top-spacing">
+<div>
+    <div class="row sales layout-top-spacing">
     <div class="col-sm-12">
         <div class="widget widget-chart-one">
             <div class="widget-heading">
@@ -14,7 +15,7 @@
             @include('common.buscador')
             <div class="widget-content">
                 <div class="table-responsive">
-                    <table class="table table-bordered table striped mt-1">
+                    <table class="table-bordered table striped mt-1">
                         <thead class="text-white" style="background: #3b3f5c;">
                             <tr>
                                 <th class="text-th text-white">NOMBRE</th>
@@ -56,6 +57,7 @@
         </div>
     </div>
     @include('livewire.module.form')
+</div>
 </div>
 
 <script>

@@ -1,7 +1,7 @@
 <script src="{{ asset('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
-<script src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+<script src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
+<script src="{{ asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>s
 <script src="{{ asset('assets/js/app.js') }}"></script>
 <script>
     $(document).ready(function() {
