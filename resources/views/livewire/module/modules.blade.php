@@ -11,7 +11,7 @@
                     </li>
                 </ul>
             </div>
-            @include('common.searchBox')
+            @include('common.buscador')
             <div class="widget-content">
                 <div class="table-responsive">
                     <table class="table table-bordered table striped mt-1">
